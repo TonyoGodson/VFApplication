@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/country_nav"
+    app:startDestination="@id/countryList">
+
+    <fragment
+        android:id="@+id/countryList"
+        android:name="com.godston.vfapplication.ui.CountryList"
+        android:label="fragment_country_list"
+        tools:layout="@layout/fragment_country_list" >
+        <action
+            android:id="@+id/action_countryList_to_countryDetail"
+            app:destination="@id/countryDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetail"
+        android:name="com.godston.vfapplication.ui.CountryDetail"
+        android:label="fragment_country_detail"
+        tools:layout="@layout/fragment_country_detail" >
+        <action
+            android:id="@+id/action_countryDetail_to_countryList"
+            app:destination="@id/countryList" />
+        <argument
+            android:name="currentCountry"
+            app:argType="com.godston.vfapplication.model.Country" />
+    </fragment>
+</navigation>
